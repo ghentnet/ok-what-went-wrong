@@ -3,8 +3,17 @@ share: true
 title: Services List
 ---
 
-
-- Move Mastodon in house
+- Mastodon
+- GoToSocial
 - Pixelfed
-- Gitea
-- 
+- Plex
+- Calibre-Web
+- Home Assistant
+- Minio
+- OwnTracks
+- RSS Bridge
+- Tiny Tiny RSS or Fresh RSS
+- Portainer
+- Github Action Runner
+- 1Password Services
+- ArchiveBox
