@@ -1,6 +1,7 @@
 ---
 share: true
 title: Services List
+created_at: 2024-03-17
 ---
 
 - Mastodon
@@ -17,3 +18,6 @@ title: Services List
 - Github Action Runner
 - 1Password Services
 - ArchiveBox
+
+## For Research Purposes
+https://github.com/rknightuk/intersect/blob/main/src/pages/self-hosting/index.md
