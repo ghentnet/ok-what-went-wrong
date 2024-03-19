@@ -1,0 +1,31 @@
+{
+  "name": "ok-what-went-wrong",
+  "version": "1.0.0",
+  "description": "This is the consolidated Commonplace Book for the podcast, **Ok, What Went Wrong?**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:eleventy": "eleventy --serve",
+    "build:eleventy": "eleventy",
+    "start": "npm-run-all --parallel watch:*",
+    "build": "npm-run-all build:*",
+    "debug": "DEBUG=* npx eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ghentnet/ok-what-went-wrong.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ghentnet/ok-what-went-wrong/issues"
+  },
+  "homepage": "https://github.com/ghentnet/ok-what-went-wrong#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
