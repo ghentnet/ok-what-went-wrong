@@ -8,3 +8,6 @@ updated_at: 2024-05-10
 # Plex Setup
 - Docker
 - mount Synology drive via NFS in docker-compose https://www.reddit.com/r/selfhosted/comments/lkti7c/how_do_you_properly_attach_nfs_shares_to_docker/
+- https://github.com/plexinc/pms-docker
+- Run via Portainer
+- Config and Data all exist on Synology drive
