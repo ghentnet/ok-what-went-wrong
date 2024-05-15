@@ -13,3 +13,4 @@ updated_at: 2024-05-10
 - Data all exist on Synology drive
 - Config data will be stored on the NUC and backed up to the Synology
 	- Config data is in /data/plex
+	- Setting the UID/GID to the same as the `docker` user on the Synology solved the writing issue with Plex Live TV DVR
