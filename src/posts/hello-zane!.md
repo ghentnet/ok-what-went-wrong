@@ -1,8 +1,8 @@
 ---
 title: Hello Zane!
 share: true
-created_at: 2024-09-17
-updated_at: 2024-09-17
+created_at: 2024-09-17T22:29
+updated_at: 2024-09-17T22:29
 ---
 
 Hello Zane!
