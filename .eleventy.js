@@ -23,7 +23,6 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection('blog', (collectionApi) => {
     const posts = collectionApi.getFilteredByGlob('./src/posts/*.md')
     .filter(process.env.ELEVENTY_RUN_MODE !== "serve" ? item => !item.data.draft : item => item.data).reverse()
-    console.log(posts)
     return posts
   })
 
