@@ -1,8 +1,8 @@
 ---
 title: Hello Zane!
 share: true
-created_at: 2024-09-17T22:29
-updated_at: 2024-09-17T22:29
+created_at: 2024-09-17T22:29:06.000Z
+updated_at: 2024-09-17T22:29:06.000Z
 ---
 
 Hello Zane!
@@ -29,3 +29,5 @@ Can't wait to hear from you!
 Dad
 
 PS. This is going to be our first post on the revamped Ok, What Went Wrong?
+
+PPS. Publishing from Obsidian is setup to the site through Git Publishing.
