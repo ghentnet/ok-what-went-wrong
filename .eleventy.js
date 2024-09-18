@@ -16,7 +16,7 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter('readableDate', dateObj => {
     return DateTime.fromJSDate(dateObj, {
       zone: 'utc',
-    }).setLocale('en').toLocaleString(DateTime.DATE_FULL)
+    }).setLocale('en').toLocaleString(DateTime.DATETIME_SHORT)
   })
 
   /* Creating a collection of blog posts by filtering based on folder and filetype */
