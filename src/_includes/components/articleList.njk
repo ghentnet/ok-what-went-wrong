@@ -1,0 +1,10 @@
+{% for post in collections.blog %}
+    <article class="article__preview">
+      <small>
+        <time>{{ post.data.created_at | readableDate }}</time>
+      </small>
+      {{ post.content | safe }}
+    </article>
+{% endfor %}
+
+<hr />

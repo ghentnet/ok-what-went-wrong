@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+
+    <title>{{ title or metadata.title }}</title>
+    {% include "../styles.njk" %}
+    {%- if env.ELEVENTY_RUN_MODE !== "serve" -%}
+      <script defer src="https://cloud.umami.is/script.js" data-website-id="6f3c7184-0836-4c1d-8cf7-cd0a6c1da89f"></script>
+    {%- endif -%}
+  </head>
+
+  <body>
+    <main role="main">
+      {{ content | safe }}
+    </main>
+  </body>
+</html>
