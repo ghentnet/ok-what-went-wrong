@@ -1,5 +1,7 @@
 {% for post in collections.blog %}
+    <hr />
     <article class="article__preview">
+      <h2>{{ post.data.title }}</h2>
       <small>
         <time>{{ post.data.created_at | readableDate }}</time>
       </small>

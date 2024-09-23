@@ -1,10 +1,15 @@
 const markdownIt = require("markdown-it")
+const markdownItFootnote = require("markdown-it-footnote");
 const { DateTime } = require('luxon')
 
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("md", function (content = "") {
-    return markdownIt({ html: true }).render(content);
+    return markdownIt({ 
+      html: true, // Enable HTML tags in source
+      breaks: true,  // Convert '\n' in paragraphs into <br>
+      linkify: true // Autoconvert URL-like text to links
+     }).use(markdownItFootnote).render(content);
   })
   
   eleventyConfig.addLayoutAlias('page', 'layouts/page')
@@ -22,7 +27,7 @@ module.exports = function(eleventyConfig) {
   /* Creating a collection of blog posts by filtering based on folder and filetype */
   eleventyConfig.addCollection('blog', (collectionApi) => {
     const posts = collectionApi.getFilteredByGlob('./src/posts/*.md')
-    .filter(process.env.ELEVENTY_RUN_MODE !== "serve" ? item => !item.data.draft : item => item.data).reverse()
+    .filter(process.env.ELEVENTY_RUN_MODE !== "serve" ? item => !item.data.draft : item => item.data)
     return posts
   })
 

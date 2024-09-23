@@ -5,9 +5,7 @@ created_at: 2024-09-22T20:02:02.000Z
 updated_at: 2024-09-22T20:02:02.000Z
 ---
 
-
-
-  The good news is that my desk is fully set up for recording now!  
+The good news is that my desk is fully set up for recording now!  
   
 Addressing the next steps:  
   
@@ -17,10 +15,10 @@ That being said, I think that setting up a second LAN specifically for homelab w
   
 Decommissioning the “outside” server is in our best interest in my opinion. I agree fully that the traffic we’re expecting isn’t going to be great enough that we’re gonna need that extra bandwidth that the external hosting is gonna provide us. Additionally, if the Matrix server goes down and we lose the data and then have to start from zero, I think we’ll be good. Nobody has mission critical data on there, and the setting up process won’t be headache inducing.  
   
-Side note about GoToSocial, I want to be more involved in that setup this time. I need to know how to control the server configuration if I’m going to continue to use the platform. [1]  
+Side note about GoToSocial, I want to be more involved in that setup this time. I need to know how to control the server configuration if I’m going to continue to use the platform. [^1]  
   
 I’m in the dark mostly about how to setup things, so I’ll need to take marching orders, but I’m ready to work on this!  
   
 —Zane  
   
-[1] Side note: GoToSocial is really good and you should use it too :P
+[^1]: Side note: GoToSocial is really good and you should use it too :P
