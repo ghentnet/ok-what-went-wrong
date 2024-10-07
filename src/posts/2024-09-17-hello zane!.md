@@ -5,6 +5,8 @@ created_at: 2024-09-17T22:29:06.000Z
 updated_at: 2024-09-17T22:29:06.000Z
 ---
 
+Hello Zane!
+
 It's time to get our home lab back up and running. Thank you for all the research you did and the initial setup work this summer. I wanted to get written out what I'm envisioning for our next steps and what we want to build out. Once our schedules calm down I want to get back to recording our podcast with you.
 
 
