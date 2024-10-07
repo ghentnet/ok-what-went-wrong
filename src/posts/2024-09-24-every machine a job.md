@@ -9,7 +9,7 @@ I've been thinking a lot about the network and server configuration, as well as 
 
 I'm thinking about the machines that make up the home lab as corresponding to different functions. I sketched it out below.
 
-![[../103-homelab/images/tunnel-to-funnel-services-sketch.png|tunnel-to-funnel-services-sketch.png]]
+![Sketch of network layout](./img/tunnel-to-funnel-services-sketch.png "Network layout")
 
 Each device serves a purpose:
 

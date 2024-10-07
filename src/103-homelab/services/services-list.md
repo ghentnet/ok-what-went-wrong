@@ -7,9 +7,9 @@ created_at: 2024-03-17
 - Mastodon
 - GoToSocial
 - Pixelfed
-- Plex
-- Calibre-Web
-- Home Assistant
+- Plex ✅
+- Calibre-Web ✅
+- Home Assistant ✅
 - Minio
 - OwnTracks
 - RSS Bridge
@@ -20,6 +20,7 @@ created_at: 2024-03-17
 - ArchiveBox
 - Bookwyrm
 - Ohnaka Transport
+- https://docs.rsshub.app
 
 ## For Research Purposes
 https://github.com/rknightuk/intersect/blob/main/src/pages/self-hosting/index.md
