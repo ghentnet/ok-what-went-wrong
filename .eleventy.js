@@ -1,5 +1,6 @@
 const markdownIt = require("markdown-it")
 const markdownItFootnote = require("markdown-it-footnote");
+const markdownItEleventyImg = require("markdown-it-eleventy-img");  
 const { DateTime } = require('luxon')
 
 
@@ -9,11 +10,13 @@ module.exports = function(eleventyConfig) {
       html: true, // Enable HTML tags in source
       breaks: true,  // Convert '\n' in paragraphs into <br>
       linkify: true // Autoconvert URL-like text to links
-     }).use(markdownItFootnote).render(content);
+     }).use(markdownItEleventyImg).render(content);
   })
   
   eleventyConfig.addLayoutAlias('page', 'layouts/page')
   eleventyConfig.addLayoutAlias('post', 'layouts/post')
+
+  eleventyConfig.addPassthroughCopy("src/img");
   
   eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`)
   eleventyConfig.addShortcode("appVer", () => `v${process.env.APP_VERSION || '0.0.0'}`)

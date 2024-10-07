@@ -1,4 +1,4 @@
-{% for post in collections.blog %}
+{% for post in collections.blog | reverse %}
     <hr />
     <article class="article__preview">
       <h2>{{ post.data.title }}</h2>
