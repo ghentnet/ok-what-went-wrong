@@ -5,6 +5,12 @@
       <small>
         <time>{{ post.data.created_at | readableDate }}</time>
       </small>
+      <div style="margin-top: 20px">
+        <small>
+          <div>From: {{ post.data.from }}</div>
+          <div>To: {{ post.data.to }}</div>
+        </small>
+      </div>
       {{ post.content | safe }}
     </article>
 {% endfor %}
