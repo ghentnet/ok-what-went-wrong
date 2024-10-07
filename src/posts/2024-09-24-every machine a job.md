@@ -3,13 +3,15 @@ title: Every Machine a Job
 share: true
 created_at: 2024-10-06T21:49:38.000Z
 updated_at: 2024-10-06T21:49:38.000Z
+from: Mike
+to: Zane
 ---
 
 I've been thinking a lot about the network and server configuration, as well as "what are our goals."
 
 I'm thinking about the machines that make up the home lab as corresponding to different functions. I sketched it out below.
 
-![Sketch of network layout](./img/tunnel-to-funnel-services-sketch.png "Network layout")
+![[./images/tunnel-to-funnel-services-sketch.png|tunnel-to-funnel-services-sketch.png]]
 
 Each device serves a purpose:
 
