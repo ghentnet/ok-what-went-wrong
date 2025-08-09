@@ -1,0 +1,32 @@
+{
+    "siteTitle": "Ok, What Went Wrong?",
+    "siteDescription": "",
+    "author": "Michael Sean Becker and Zane Becker-Byrd",
+    "faviconUrl": "/assets/myfavicon.png",
+    "blogTitle": "Blog",
+    "blogDescription": "Here is the description of the blog part",
+    "productionUrl": "https://okwhatwentwrong.com",
+    "customLinks": [
+        {
+            "url": "/feed.xml",
+            "text": "Atom feed"
+        },
+        {
+            "url": "https://github.com/ghentnet/ok-what-went-wrong",
+            "text": "GitHub"
+        },
+        {
+            "url": "#",
+            "text": "Bluesky"
+        },
+        {
+            "url": "#",
+            "text": "LinkedIn"
+        },
+        {
+            "url": "#",
+            "text": "CodePen"
+        }
+    ],
+    "editThisPageRootUrl": "https://github.com/ita-design-system/eleventy-libdoc/blob/main"
+}
