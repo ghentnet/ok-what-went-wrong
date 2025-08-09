@@ -1,49 +1,60 @@
-const markdownIt = require("markdown-it")
-const markdownItFootnote = require("markdown-it-footnote");
-const markdownItEleventyImg = require("markdown-it-eleventy-img");  
-const { DateTime } = require('luxon')
+// START 11TY imports
+import eleventyNavigationPlugin             from "@11ty/eleventy-navigation";
+import { InputPathToUrlTransformPlugin }    from "@11ty/eleventy";
+import { eleventyImageTransformPlugin }     from "@11ty/eleventy-img";
+import { EleventyHtmlBasePlugin }           from "@11ty/eleventy";
+import pluginRss                            from "@11ty/eleventy-plugin-rss";
+// END 11TY imports
 
+// START LibDoc imports
+import libdocConfig                         from "./_data/libdocConfig.js";
+import libdocFunctions                      from "./_data/libdocFunctions.js";
+// END LibDoc imports
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.addFilter("md", function (content = "") {
-    return markdownIt({ 
-      html: true, // Enable HTML tags in source
-      breaks: true,  // Convert '\n' in paragraphs into <br>
-      linkify: true // Autoconvert URL-like text to links
-     }).use(markdownItEleventyImg).render(content);
-  })
-  
-  eleventyConfig.addLayoutAlias('page', 'layouts/page')
-  eleventyConfig.addLayoutAlias('post', 'layouts/post')
+export default function(eleventyConfig) {
+    // START PLUGINS
+    eleventyConfig.addPlugin(EleventyHtmlBasePlugin);
+    eleventyConfig.addPlugin(InputPathToUrlTransformPlugin);
+    eleventyConfig.addPlugin(eleventyNavigationPlugin);
+    eleventyConfig.addPlugin(eleventyImageTransformPlugin, libdocFunctions.pluginsParameters.eleventyImageTransform());
+    eleventyConfig.addPlugin(pluginRss);
+    // END PLUGINS
 
-  eleventyConfig.addPassthroughCopy("src/img");
-  
-  eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`)
-  eleventyConfig.addShortcode("appVer", () => `v${process.env.APP_VERSION || '0.0.0'}`)
+    // START FILTERS
+    eleventyConfig.addAsyncFilter("autoids", libdocFunctions.filters.autoids);
+    eleventyConfig.addAsyncFilter("embed", libdocFunctions.filters.embed);
+    eleventyConfig.addAsyncFilter("cleanup", libdocFunctions.filters.cleanup);
+    eleventyConfig.addAsyncFilter("dateString", libdocFunctions.filters.dateString);
+    eleventyConfig.addAsyncFilter("datePrefixText", libdocFunctions.filters.datePrefixText);
+    eleventyConfig.addAsyncFilter("toc", libdocFunctions.filters.toc);
+    eleventyConfig.addAsyncFilter("sanitizeJSON", libdocFunctions.filters.sanitizeJson);
+    eleventyConfig.addAsyncFilter("gitLastModifiedDate", libdocFunctions.filters.gitLastModifiedDate);
+    // END FILTERS
 
-  eleventyConfig.addFilter('readableDate', dateObj => {
-    return DateTime.fromJSDate(dateObj, {
-      zone: 'utc',
-    }).setLocale('en').toLocaleString(DateTime.DATETIME_SHORT)
-  })
+    // START COLLECTIONS
+    eleventyConfig.addCollection("myTags", libdocFunctions.collections.myTags);
+    eleventyConfig.addCollection("postsByDateDescending", libdocFunctions.collections.postsByDateDescending);
+    // END COLLECTIONS
 
-  /* Creating a collection of blog posts by filtering based on folder and filetype */
-  eleventyConfig.addCollection('blog', (collectionApi) => {
-    const posts = collectionApi.getFilteredByGlob('./src/posts/*.md')
-    .filter(process.env.ELEVENTY_RUN_MODE !== "serve" ? item => !item.data.draft : item => item.data)
-    return posts
-  })
+    // START SHORTCODES
+    eleventyConfig.addShortcode("alert", libdocFunctions.shortcodes.alert);
+    eleventyConfig.addPairedShortcode("alertAlt", libdocFunctions.shortcodes.alert);
+    eleventyConfig.addShortcode("embed", libdocFunctions.shortcodes.embed);
+    eleventyConfig.addShortcode("icomoon", libdocFunctions.shortcodes.icomoon);
+    eleventyConfig.addShortcode("icon", libdocFunctions.shortcodes.icon);
+    eleventyConfig.addShortcode("iconCard", libdocFunctions.shortcodes.iconCard);
+    eleventyConfig.addPairedShortcode("sandbox", libdocFunctions.shortcodes.sandbox);
+    eleventyConfig.addPairedShortcode("sandboxFile", libdocFunctions.shortcodes.sandboxFile);
+    // END SHORTCODES
 
-
-  eleventyConfig.addGlobalData("env", process.env);
-
-  return {
-    dir: {
-      input: 'src',
-      output: '_site',
-      includes: '_includes',
-      data: '_data'
-    },
-    markdownTemplateEngine: 'njk'
-  } 
-}
+    // START FILE COPY
+	eleventyConfig.addPassthroughCopy("sandboxes");
+    eleventyConfig.addPassthroughCopy("assets");
+    eleventyConfig.addPassthroughCopy("core/assets");
+    eleventyConfig.addPassthroughCopy("favicon.png");
+    // END FILE COPY
+    
+    return {
+        pathPrefix: libdocConfig.htmlBasePathPrefix
+    }
+};

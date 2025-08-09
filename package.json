@@ -1,35 +1,20 @@
 {
-  "name": "ok-what-went-wrong",
-  "version": "1.0.0",
-  "description": "This is the consolidated Commonplace Book for the podcast, **Ok, What Went Wrong?**",
+  "name": "eleventy-libdoc",
+  "version": "0.10.0",
+  "description": "An Eleventy starter project to craft slick and responsive documentation",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:eleventy": "eleventy --serve",
-    "build:eleventy": "eleventy",
-    "start": "npm-run-all --parallel watch:*",
-    "build": "npm-run-all build:*",
-    "debug": "DEBUG=* npx eleventy"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ghentnet/ok-what-went-wrong.git"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ghentnet/ok-what-went-wrong/issues"
-  },
-  "homepage": "https://github.com/ghentnet/ok-what-went-wrong#readme",
-  "devDependencies": {
-    "@11ty/eleventy": "^2.0.1",
-    "markdown-it-eleventy-img": "^0.10.2"
-  },
+  "type": "module",
   "dependencies": {
-    "@11ty/eleventy-img": "^5.0.0",
-    "luxon": "^3.5.0",
-    "markdown-it-footnote": "^4.0.0",
-    "npm-run-all": "^4.1.5"
+    "@11ty/eleventy": "^3.0.0",
+    "@11ty/eleventy-img": "^6.0.1",
+    "@11ty/eleventy-navigation": "^0.3.5",
+    "@11ty/eleventy-plugin-rss": "^2.0.4",
+    "sharp": "^0.33.5"
   }
 }
